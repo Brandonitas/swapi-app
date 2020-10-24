@@ -1,17 +1,17 @@
-.dark-mode{
-    background-color: black;
-}
-
 @font-face {
     font-family: 'Galaxy';
     src: local('Galaxy'), url('../fonts/SFDistantGalaxy.ttf') format('truetype');
 }
 
-
 *{
-    background-color: white;
-    color: #565656;
+    color: #FFFFFF;
     font-family: 'Galaxy' !important;
+}
+
+body{
+    background-image: url("/assets/background-dark.png") !important;
+    background-size: cover;
+    background-position: center;
 }
 
 @import './base/settings';
@@ -20,3 +20,4 @@
 //Components
 @import './components/header';
 @import './components/card';
+@import './components/home';
