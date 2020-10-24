@@ -1,6 +1,13 @@
-.card-container{
+.card-container-movie{
     width: 360px;
     height: 97px;
+    background: #272727;
+    border-radius: 10px;
+}
+
+.card-container-starship{
+    width: 525px;
+    height: 150px;
     background: #272727;
     border-radius: 10px;
 }

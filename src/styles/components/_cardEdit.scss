@@ -1,0 +1,38 @@
+.card-edit{
+    background-color: #1C1C1C;
+    width: 479px;
+    height: 410px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.input-starship{
+    color: white !important;
+    width: 397px;
+    height: 62px;
+}
+
+.MuiFormControl-root{
+    margin-bottom: 25px !important;
+}
+
+.MuiInputLabel-outlined {
+    color: white !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: red !important;
+}
+
+.MuiOutlinedInput-input {
+    color: white !important;
+}
+
+.btn-submit{
+    
+    width: 397px;
+    height: 62px;
+
+    background: #3F0000;
+    border-radius: 5px;
+}
