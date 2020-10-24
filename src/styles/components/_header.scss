@@ -1,0 +1,27 @@
+.header{
+    height: 100px;
+    display: block;
+}
+
+.logo{
+    position: absolute;
+    width: 96px;
+    height: 45.02px;
+    left: 37px;
+    top: 48px;
+}
+
+.title-container{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .title-text{
+        -webkit-text-stroke: 2px black;
+        color: #FFFF00;
+    }
+
+}
