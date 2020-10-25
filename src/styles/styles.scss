@@ -4,15 +4,31 @@
 }
 
 *{
-    color: #FFFFFF;
     font-family: 'Galaxy' !important;
 }
 
-body{
+.darkMode{
+    height: 100vh !important;
+    width: 100vw !important;
     background-image: url("/assets/background-dark.png") !important;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
+    color: #FFFFFF;
+    transition: background-image 0.35s ease-out;
 }
+
+
+.lightMode{
+    height: 100vh !important;
+    width: 100vw !important;
+    background-image: url("/assets/background-light.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    color: #565656;
+    transition: background-image 0.35s ease-out;
+}
+
+
 
 @import './base/settings';
 @import './base/base';

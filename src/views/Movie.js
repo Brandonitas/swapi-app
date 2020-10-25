@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import swapi from '../APIs/swapi'
 import {useParams} from 'react-router-dom';
 import CardStarship from '../components/CardStarship';
+import { useSelector } from 'react-redux';
 
 const Movie = () => {
 
     const {movieid} = useParams();
 
     const [starships, setStarships] = useState([])
+
+    const {darkMode} = useSelector(state => state.style);
 
     useEffect(() => {
         async function loadData(){
@@ -27,13 +30,13 @@ const Movie = () => {
 
     
     return (
-            <div className="cards-section shadow-xl">
+            <div style={{ backgroundColor: darkMode ? "#121212" : "#F3F3F3" }} className="cards-section shadow-xl">
                 <div className="cards-container">
                     <h2>Select a starship</h2>
                     <div className="grid grid-cols-2 gap-10 mt-10">
                        {starships.map((info)=>{
                            return(
-                           <CardStarship info={info}/>
+                           <CardStarship key={info.url} info={info}/>
                            )
                        })}  
                         

@@ -3,7 +3,81 @@ import { useParams } from 'react-router-dom';
 import swapi from '../APIs/swapi';
 import starship from '../APIs/starship';
 import TextField from '@material-ui/core/TextField';
+import { withStyles } from "@material-ui/core/styles";
 import Swal from 'sweetalert2';
+import { useSelector } from 'react-redux';
+
+
+const DarkInputStyle = withStyles({
+    root: {
+      ".MuiFormControl-root":{
+        
+      },
+      "& label.Mui-focused": {
+        color: "red",
+      },
+      "& .MuiInput-underline:after": {
+        borderBottomColor: "red"
+      },
+      "& .MuiOutlinedInput-root": {
+        marginBottom: "25px",
+        width: "397px",
+        height: "62px",
+        "& fieldset": {
+          borderColor: "red"
+        },
+        "&:hover fieldset": {
+          borderColor: "red"
+        },
+        "&.Mui-focused fieldset": {
+          borderColor: "red"
+        }
+      },
+      "& .MuiOutlinedInput-input":{
+        color: "white"
+      },
+      "& .MuiFormLabel-root": {
+        color: "white"
+       }
+    }
+  })(TextField);
+
+
+  const LigthInputStyle = withStyles({
+    root: {
+      ".MuiFormControl-root":{
+        
+      },
+      "& label.Mui-focused": {
+        color: "#BFD4FC",
+      },
+      "& .MuiInput-underline:after": {
+        borderBottomColor: "#565656"
+      },
+      "& .MuiOutlinedInput-root": {
+        marginBottom: "25px",
+        width: "397px",
+        height: "62px",
+        "& fieldset": {
+          borderColor: "#BFD4FC"
+        },
+        "&:hover fieldset": {
+          borderColor: "#BFD4FC"
+        },
+        "&.Mui-focused fieldset": {
+          borderColor: "#BFD4FC"
+        }
+      },
+      "& .MuiOutlinedInput-input":{
+        color: "#565656"
+      },
+      "& .MuiFormLabel-root": {
+        color: "#565656"
+       }
+    }
+  })(TextField);
+
+
 
 const EditStarship = () => {
 
@@ -16,6 +90,8 @@ const EditStarship = () => {
     const [cargoCapacity, setCargoCapacity] = useState('');
 
     const [hasData, setHasData] = useState(false)
+
+    const {darkMode} = useSelector(state => state.style);
 
     useEffect(() => {
 
@@ -97,7 +173,7 @@ const EditStarship = () => {
     }
 
     return (
-        <div className="cards-section shadow-xl">
+        <div style={{ backgroundColor: darkMode ? "#121212" : "#F3F3F3" }} className="cards-section shadow-xl">
             <div className="cards-container">
                 <h2>Edit your starship</h2>
                 <div className="grid grid-cols-2 gap-10 mt-10">
@@ -117,42 +193,72 @@ const EditStarship = () => {
                         <p>Class: {starship_class}</p>
                     </div>
                     <div>
-                        <div className="card-edit p-10">
+                        <div style={{ backgroundColor: darkMode ? "#1C1C1C" : "#F7F7F7" }} className="card-edit p-10">
                             <div className="m-auto text-center">
 
                                 <form onSubmit={handleSaveData}>
-       
-                                    <TextField 
-                                    
-                                    className="input-starship" 
-                                    label="Length" 
-                                    variant="outlined" 
-                                    name="length"
-                                    value={length}
-                                    onChange={e => setLength(e.target.value)}
-                                    />  
 
-                                    <TextField 
+                                    {darkMode ? 
                                     
-                                    className="input-starship" 
-                                    label="Max speed" 
-                                    variant="outlined" 
-                                    name="maxSpeed"
-                                    value={maxSpeed}
-                                    onChange={e => setMaxSpeed(e.target.value)}
-                                    />  
+                                    <div>
+                                        <DarkInputStyle                                     
+                                        label="Length" 
+                                        variant="outlined" 
+                                        name="length"
+                                        value={length}
+                                        onChange={e => setLength(e.target.value)}
+                                        />  
+    
+                                        <DarkInputStyle 
+                                        label="Max speed" 
+                                        variant="outlined" 
+                                        name="maxSpeed"
+                                        value={maxSpeed}
+                                        onChange={e => setMaxSpeed(e.target.value)}
+                                        />  
+    
+                                        <DarkInputStyle 
+                                        label="Cargo capacity" 
+                                        variant="outlined" 
+                                        name="cargoCapacity"
+                                        value={cargoCapacity}
+                                        onChange={e => setCargoCapacity(e.target.value)}
+                                        />    
 
-                                    <TextField 
-                                    
-                                    className="input-starship" 
-                                    label="Cargo capacity" 
-                                    variant="outlined" 
-                                    name="cargoCapacity"
-                                    value={cargoCapacity}
-                                    onChange={e => setCargoCapacity(e.target.value)}
-                                    />    
+                                    </div>
 
-                                    <button type="submit" className="btn-submit">
+
+                                    :
+                                    <div>
+                                        <LigthInputStyle                                     
+                                        label="Length" 
+                                        variant="outlined" 
+                                        name="length"
+                                        value={length}
+                                        onChange={e => setLength(e.target.value)}
+                                        />  
+
+                                        <LigthInputStyle 
+                                        label="Max speed" 
+                                        variant="outlined" 
+                                        name="maxSpeed"
+                                        value={maxSpeed}
+                                        onChange={e => setMaxSpeed(e.target.value)}
+                                        />  
+
+                                        <LigthInputStyle 
+                                        label="Cargo capacity" 
+                                        variant="outlined" 
+                                        name="cargoCapacity"
+                                        value={cargoCapacity}
+                                        onChange={e => setCargoCapacity(e.target.value)}
+                                        />    
+                                    </div>
+                                    }
+
+                                   
+
+                                    <button style={{ backgroundColor: darkMode ? "#3F0000" : "#BFD4FC" }} type="submit" className="btn-submit">
                                         Save data
                                     </button>  
 

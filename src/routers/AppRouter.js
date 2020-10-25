@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,9 +12,13 @@ import Home from '../views/Home';
 import Movie from '../views/Movie';
 
 const AppRouter = () => {  
+
+    const {darkMode} = useSelector(state => state.style);
+    console.log(darkMode);
+
     return (
         <Router>
-            <div>
+            <div className={darkMode ? "darkMode" : "lightMode"}>
                 <Header></Header>
                 <Switch>
                         <Route 
