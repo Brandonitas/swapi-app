@@ -10,8 +10,6 @@ const CardStarship = ({info}) => {
         setIndex(i);
     }, [info.url])
 
-    console.log("INFOOO",info)
-
     return (
         <Link to={`/starship/${index}`}>
             <div className="card-container-starship p-2">

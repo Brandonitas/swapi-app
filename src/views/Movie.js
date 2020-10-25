@@ -6,19 +6,16 @@ import CardStarship from '../components/CardStarship';
 const Movie = () => {
 
     const {movieid} = useParams();
-    console.log("MovieID",movieid);
 
     const [starships, setStarships] = useState([])
 
     useEffect(() => {
         async function loadData(){
             const res = await swapi.get(`/films/${movieid}?format=json`);
-            console.log("DATA DEL RED", res.data.starships)
-
+            
             const urlStarships = res.data.starships;
             urlStarships.map(async(url)=>{
                 const res = await swapi.get(`${url}?format=json`);
-                console.log("DATA DEL STARSHIP", res.data)
                 setStarships(starships => [...starships, res.data]);                
             })
 
@@ -28,8 +25,7 @@ const Movie = () => {
         
     }, [movieid])
 
-    console.log("STAAAR", starships)
-
+    
     return (
             <div className="cards-section shadow-xl">
                 <div className="cards-container">
