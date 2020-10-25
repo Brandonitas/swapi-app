@@ -14,8 +14,7 @@ import Movie from '../views/Movie';
 const AppRouter = () => {  
 
     const {darkMode} = useSelector(state => state.style);
-    console.log(darkMode);
-
+    
     return (
         <Router>
             <div className={darkMode ? "darkMode" : "lightMode"}>
