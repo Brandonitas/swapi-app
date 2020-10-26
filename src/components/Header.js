@@ -44,17 +44,24 @@ const Header = () => {
                 :
                 <Link to='/movies'><img alt="logo" src='/assets/starwars-logo-light.png' className='logo' /></Link>
                 }
-                <div style={{ color: darkMode ? "#FFFFFF" : "#FFFF00" }} className="m-auto text-center title-container">
-                    <h1 className="title-text">SWAPI</h1>
-                    <h3 className="title-text -mt-5">By: Brandon Reyes</h3>
+                <div className="m-auto text-center title-container">
+                    <h1 style={{ color: darkMode ? "#FFFFFF" : "#FFFF00" }} className="title-text">SWAPI</h1>
+                    <h3 style={{ color: darkMode ? "#FFFFFF" : "#FFFF00" }} className="title-text -mt-5">By: Brandon Reyes</h3>
+                    <div className="flex text-center justify-center mt-2">
+                        <a href="https://app.swaggerhub.com/apis-docs/brandonitas-apps/SWAPI-API/1.0.0" target="_blank" className="text-xs">Visit our API documentation</a>
+                        <img src="https://docs.oracle.com/cloud/apiary/images/swagger-logo.png" className="swagger-icon ml-2"></img>
+                    </div>
                 </div>
-                <FormGroup>
-                    <FormControlLabel
-                        control={<PurpleSwitch onChange={handleChangeStyle} name="checkedA" />}
-                        label={darkMode ? "Change to light side" : "Change to dark side"}
-                        labelPlacement="start"
-                    />
-                </FormGroup>                
+
+                    <FormGroup>
+                        <FormControlLabel
+                            control={<PurpleSwitch onChange={handleChangeStyle} name="checkedA" />}
+                            label={darkMode ? "Change to light side" : "Change to dark side"}
+                            labelPlacement="start"
+                        />
+                    </FormGroup>  
+                 
+                
                 
             </div>
             
