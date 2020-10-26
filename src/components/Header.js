@@ -40,9 +40,9 @@ const Header = () => {
         <div className="header">
             <div className="flex">
                 {darkMode ? 
-                <Link to='/movies'><img alt="logo" src='/assets/starwars-logo-dark.png' className='logo' /></Link>
+                <Link to='/'><img alt="logo" src='/assets/starwars-logo-dark.png' className='logo' /></Link>
                 :
-                <Link to='/movies'><img alt="logo" src='/assets/starwars-logo-light.png' className='logo' /></Link>
+                <Link to='/'><img alt="logo" src='/assets/starwars-logo-light.png' className='logo' /></Link>
                 }
                 <div className="m-auto text-center title-container">
                     <h1 style={{ color: darkMode ? "#FFFFFF" : "#FFFF00" }} className="title-text">SWAPI</h1>

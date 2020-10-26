@@ -21,7 +21,8 @@ const AppRouter = () => {
                 <Header></Header>
                 <Switch>
                         <Route 
-                            path="/movies" 
+                            path="/" 
+                            exact
                             component={Home}/>
                         <Route  
                             path="/movie/:movieid" 
@@ -31,7 +32,7 @@ const AppRouter = () => {
                             path="/starship/:starshipid" 
                             exact 
                             component={EditStarship}/>                                                        
-                        <Redirect to="/movies" />
+                        <Redirect to="/" />
                 </Switch> 
             </div>            
         </Router>
